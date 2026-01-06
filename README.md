@@ -11,6 +11,7 @@ My dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 - `wezterm` - WezTerm terminal
 - `gh` - GitHub CLI configuration
 - `gh-dash` - GitHub CLI dashboard
+- `ccstatusline` - Claude Code status line configuration
 
 ## Installation
 
@@ -27,7 +28,7 @@ My dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 3. Stow the packages you want:
    ```bash
    cd ~/dotfiles
-   stow fish starship ghostty nvim wezterm gh gh-dash
+   stow fish starship ghostty nvim wezterm gh gh-dash ccstatusline
    ```
 
    Or stow a single package:
@@ -40,3 +41,15 @@ My dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 ```bash
 stow -D fish
 ```
+
+## Claude Code Status Line
+
+The `ccstatusline` package contains a custom status line configuration for Claude Code showing model, context length, git branch, and git changes.
+
+After stowing the package, enable the status line in Claude Code:
+
+```bash
+claude config set preferredStatusLine ccstatusline
+```
+
+This sets Claude Code to use the configuration at `~/.config/ccstatusline/settings.json`.
