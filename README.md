@@ -13,30 +13,84 @@ My dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 - `gh-dash` - GitHub CLI dashboard
 - `ccstatusline` - Claude Code status line configuration
 
-## Installation
+## Fresh macOS Setup
 
-1. Clone this repo to your home directory:
-   ```bash
-   git clone <repo-url> ~/dotfiles
-   ```
+### Prerequisites
 
-2. Install stow:
-   ```bash
-   brew install stow
-   ```
+Install Homebrew if not already installed:
 
-3. Stow the packages you want:
-   ```bash
-   cd ~/dotfiles
-   stow fish starship ghostty nvim wezterm gh gh-dash ccstatusline
-   ```
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-   Or stow a single package:
-   ```bash
-   stow fish
-   ```
+### 1. Clone and Install Stow
 
-## Removing a package
+```bash
+git clone <repo-url> ~/dotfiles
+brew install stow
+```
+
+### 2. Install Applications
+
+```bash
+# Terminal emulators
+brew install --cask ghostty
+brew install --cask wezterm
+
+# Shell and prompt
+brew install fish
+brew install starship
+
+# Other tools
+brew install neovim
+brew install gh
+brew install gh-dash
+```
+
+### 3. Stow Configurations
+
+```bash
+cd ~/dotfiles
+stow fish starship ghostty nvim wezterm gh gh-dash ccstatusline
+```
+
+Or stow individual packages:
+
+```bash
+stow fish
+```
+
+### 4. Shell Setup
+
+#### Set Fish as Default Shell
+
+```bash
+# Add fish to allowed shells
+echo $(which fish) | sudo tee -a /etc/shells
+
+# Set fish as default
+chsh -s $(which fish)
+```
+
+#### Configure Starship in Fish
+
+Starship should auto-load if `starship init fish` is in your fish config. If not, add to `~/.config/fish/config.fish`:
+
+```fish
+starship init fish | source
+```
+
+### 5. Terminal Setup
+
+#### Ghostty
+
+Launch Ghostty - it will automatically use the config at `~/.config/ghostty/config`.
+
+#### WezTerm
+
+Launch WezTerm - it will automatically use the config at `~/.config/wezterm/wezterm.lua`.
+
+## Removing a Package
 
 ```bash
 stow -D fish
