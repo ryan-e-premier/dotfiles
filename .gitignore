@@ -1,0 +1,10 @@
+# Sensitive files
+gh/.config/gh/hosts.yml
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+
+# Local overrides
+*.local

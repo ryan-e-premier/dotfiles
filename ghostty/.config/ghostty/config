@@ -1,0 +1,4 @@
+theme = dark:catppuccin-macchiato,light:Catppuccin Latte
+font-family = FiraCode Nerd Font Mono
+
+keybind = shift+enter=text:\x1b\r
