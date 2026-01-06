@@ -5,9 +5,24 @@ prSections:
   - title: Needs My Review
     filters: is:open review-requested:@me
     type: null
+  - title: My Drafts
+    filters: is:open author:@me draft:true
+    type: null
+  - title: CI Failing
+    filters: is:open author:@me status:failure
+    type: null
+  - title: Approved (Ready to Merge)
+    filters: is:open author:@me review:approved
+    type: null
+  - title: Changes Requested
+    filters: is:open author:@me review:changes_requested
+    type: null
   - title: Involved
     filters: is:open involves:@me -author:@me
     type: null
+  - title: Recently Merged
+    filters: is:merged author:@me sort:updated-desc
+    limit: 10
 issuesSections:
   - title: My Issues
     filters: is:open author:@me
@@ -24,7 +39,7 @@ repo:
 defaults:
   preview:
     open: true
-    width: 50
+    width: 100
   prsLimit: 20
   issuesLimit: 20
   view: prs
@@ -68,14 +83,46 @@ keybindings:
     - key: g
       command: >
         cd {{.RepoPath}} && lazygit
+    - key: Y
+      command: >
+        echo -n "{{.RepoName}}" | pbcopy
+    - key: ctrl+j
+      builtin: pageDown
+    - key: ctrl+k
+      builtin: pageUp
   prs:
     - key: O
       builtin: checkout
     - key: C
       command: >
         zellij run -f --cwd {{.RepoPath}} -- "sh -c 'git stash -u && gh pr checkout {{.PrNumber}} && nvim .'"
-
-  issues: []
+    - key: "#"
+      command: >
+        echo -n "{{.PrNumber}}" | pbcopy
+    - key: U
+      command: >
+        cd {{.RepoPath}} && gh pr ready {{.PrNumber}}
+    - key: W
+      builtin: watchChecks
+    - key: e
+      command: >
+        cd {{.RepoPath}} && gh pr edit {{.PrNumber}}
+    - key: b
+      command: >
+        open "{{.PrUrl}}"
+    - key: D
+      command: >
+        cd {{.RepoPath}} && gh pr checkout {{.PrNumber}} && nvim -c "DiffviewOpen origin/HEAD...HEAD"
+  issues:
+    - key: "#"
+      command: >
+        echo -n "{{.IssueNumber}}" | pbcopy
+    - key: e
+      command: >
+        cd {{.RepoPath}} && gh issue edit {{.IssueNumber}}
+    - key: b
+      command: >
+        open "{{.IssueUrl}}"
   branches: []
 theme:
   ui:
@@ -83,6 +130,20 @@ theme:
     table:
       showSeparator: true
       compact: false
+  colors:
+    text:
+      primary: "#cad3f5"
+      secondary: "#b8c0e0"
+      inverted: "#24273a"
+      faint: "#6e738d"
+      warning: "#f5a97f"
+      success: "#a6da95"
+    background:
+      selected: "#494d64"
+    border:
+      primary: "#8aadf4"
+      secondary: "#363a4f"
+      faint: "#363a4f"
 pager:
   diff: diffnav
 confirmQuit: false
