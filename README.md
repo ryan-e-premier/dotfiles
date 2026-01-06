@@ -26,7 +26,7 @@ Install Homebrew if not already installed:
 ### 1. Clone and Install Stow
 
 ```bash
-git clone <repo-url> ~/dotfiles
+git clone https://github.com/ryan-e-premier/dotfiles.git ~/dotfiles
 brew install stow
 ```
 
