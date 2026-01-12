@@ -3,22 +3,23 @@
   "lines": [
     [
       {
-        "id": "1",
-        "type": "model",
-        "color": "cyan"
+        "id": "d814bde9-d127-4982-8645-ff2d8279cf2e",
+        "type": "custom-text",
+        "backgroundColor": "bgBrightGreen",
+        "customText": " ",
+        "merge": true
       },
       {
-        "id": "2",
-        "type": "separator"
+        "id": "f6be6d69-535e-4489-8af9-463deb0f9278",
+        "type": "git-worktree",
+        "backgroundColor": "bgBrightWhite"
       },
       {
-        "id": "3",
-        "type": "context-length",
-        "color": "brightBlack"
-      },
-      {
-        "id": "4",
-        "type": "separator"
+        "id": "af0b9bde-85f4-42cf-a842-f5339f5589d0",
+        "type": "custom-text",
+        "backgroundColor": "bgBlue",
+        "customText": " ",
+        "merge": true
       },
       {
         "id": "5",
@@ -27,7 +28,9 @@
       },
       {
         "id": "6",
-        "type": "separator"
+        "type": "custom-text",
+        "customText": " ",
+        "merge": true
       },
       {
         "id": "7",
@@ -35,12 +38,64 @@
         "color": "yellow"
       }
     ],
-    [],
+    [
+      {
+        "id": "f38b9c63-edde-4816-a850-4996a6aa5920",
+        "type": "custom-text",
+        "backgroundColor": "bgRed",
+        "customText": " ",
+        "merge": true
+      },
+      {
+        "id": "e8684b9a-eaac-446b-ba72-0e6cd402e001",
+        "type": "model",
+        "backgroundColor": "bgGreen"
+      },
+      {
+        "id": "d53a738d-dca2-47c9-bf29-f1211ac3f6ef",
+        "type": "custom-text",
+        "backgroundColor": "bgMagenta",
+        "customText": " ",
+        "merge": true
+      },
+      {
+        "id": "3977e276-3702-4716-b503-1ffd8b674f0b",
+        "type": "context-percentage-usable",
+        "backgroundColor": "bgBrightBlue"
+      },
+      {
+        "id": "2df6379c-1400-4706-8706-4c0d782cd99d",
+        "type": "custom-text",
+        "backgroundColor": "bgBlue",
+        "customText": " ",
+        "merge": true
+      },
+      {
+        "id": "e90296c6-86df-44ae-ab32-3b07c6f07ed3",
+        "type": "tokens-output",
+        "backgroundColor": "bgBrightRed"
+      },
+      {
+        "id": "350746e0-d9ea-4650-ac49-ffd59b944a37",
+        "type": "custom-text",
+        "backgroundColor": "bgBrightWhite",
+        "customText": " ",
+        "merge": true
+      },
+      {
+        "id": "f755e01d-b688-46f1-b963-03d63fc83ad9",
+        "type": "block-timer",
+        "backgroundColor": "bgBrightMagenta",
+        "metadata": {
+          "display": "progress-short"
+        }
+      }
+    ],
     []
   ],
   "flexMode": "full-minus-40",
   "compactThreshold": 60,
-  "colorLevel": 2,
+  "colorLevel": 3,
   "inheritSeparatorColors": false,
   "globalBold": false,
   "powerline": {
@@ -52,12 +107,14 @@
       false
     ],
     "startCaps": [
-      ""
+      "",
+      ""
     ],
     "endCaps": [
-      ""
+      "",
+      ""
     ],
-    "autoAlign": false,
-    "theme": "nord"
+    "theme": "nord",
+    "autoAlign": true
   }
 }

@@ -9,6 +9,7 @@ My dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 - `ghostty` - Ghostty terminal
 - `nvim` - Neovim configuration
 - `wezterm` - WezTerm terminal
+- `tmux` - Tmux terminal multiplexer
 - `gh` - GitHub CLI configuration
 - `gh-dash` - GitHub CLI dashboard
 - `ccstatusline` - Claude Code status line configuration
@@ -42,6 +43,7 @@ brew install fish
 brew install starship
 
 # Other tools
+brew install tmux
 brew install neovim
 brew install gh
 brew install gh-dash
@@ -51,7 +53,7 @@ brew install gh-dash
 
 ```bash
 cd ~/dotfiles
-stow fish starship ghostty nvim wezterm gh gh-dash ccstatusline
+stow fish starship ghostty nvim wezterm tmux gh gh-dash ccstatusline
 ```
 
 Or stow individual packages:
@@ -89,6 +91,31 @@ Launch Ghostty - it will automatically use the config at `~/.config/ghostty/conf
 #### WezTerm
 
 Launch WezTerm - it will automatically use the config at `~/.config/wezterm/wezterm.lua`.
+
+#### Tmux
+
+Tmux will use the config at `~/.config/tmux/tmux.conf`. The configuration includes:
+
+- Catppuccin Macchiato color scheme
+- Vi-style key bindings
+- Mouse support
+- Ghostty terminal integration
+
+**Key bindings:**
+
+| Key | Action |
+|-----|--------|
+| `prefix + \|` | Split horizontally |
+| `prefix + -` | Split vertically |
+| `prefix + h/j/k/l` | Navigate panes |
+| `prefix + H/J/K/L` | Resize panes |
+| `prefix + r` | Reload config |
+
+**Optional: Install TPM (Tmux Plugin Manager)**
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
 
 ## Removing a Package
 
