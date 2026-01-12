@@ -3,14 +3,14 @@
 SETUVAR --export BASH_SOURCE:/Users/ryan_eldridge/code/stanson\x2dfrontend/apps/backoffice
 SETUVAR --export EDITOR:nvim
 SETUVAR --export FZF_DEFAULT_COMMAND:ag\x1e\x2d\x2dnocolor\x1e\x2d\x2dignore\x1enode_modules\x1e\x2dg\x1e
-SETUVAR --export MY_CERTIFICATES:/Users/ryan_eldridge/code
-SETUVAR --export NODE_EXTRA_CA_CERTS:/Users/ryan_eldridge/code/nscacert_combined\x2epem
+SETUVAR --export MY_CERTIFICATES:/home/eldridger/code
+SETUVAR --export NODE_EXTRA_CA_CERTS:/home/eldridger/code/nscacert_combined\x2epem
 SETUVAR --export PUBLIC_URL:/mia
 SETUVAR --export SKIP_PREFLIGHT_CHECK:true
 SETUVAR SSL_CERT_FILE:/Users/ryan_eldridge/code/nscacert_combined\x2epem
 SETUVAR --export UV_NATIVE_TLS:true
 SETUVAR --export _ZO_ECHO:1
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fisher_danhper_2F_fish_2D_ssh_2D_agent_files:\x7e/\x2econfig/fish/functions/__ssh_agent_is_started\x2efish\x1e\x7e/\x2econfig/fish/functions/__ssh_agent_start\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fish\x2dssh\x2dagent\x2efish
 SETUVAR _fisher_edc_2F_bass_files:\x7e/\x2econfig/fish/functions/__bass\x2epy\x1e\x7e/\x2econfig/fish/functions/bass\x2efish
 SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
@@ -36,7 +36,7 @@ SETUVAR fish_color_option:\x1d
 SETUVAR fish_color_param:7aa6da
 SETUVAR fish_color_quote:b9ca4a
 SETUVAR fish_color_redirection:70c0b1
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen

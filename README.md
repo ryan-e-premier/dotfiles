@@ -14,25 +14,39 @@ My dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 - `gh-dash` - GitHub CLI dashboard
 - `ccstatusline` - Claude Code status line configuration
 
-## Fresh macOS Setup
+## Setup
 
 ### Prerequisites
 
-Install Homebrew if not already installed:
-
+**macOS:**
 ```bash
+# Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**Arch Linux:**
+```bash
+# Ensure base-devel is installed
+sudo pacman -S --needed base-devel git
 ```
 
 ### 1. Clone and Install Stow
 
+**macOS:**
 ```bash
 git clone https://github.com/ryan-e-premier/dotfiles.git ~/dotfiles
 brew install stow
 ```
 
+**Arch Linux:**
+```bash
+git clone https://github.com/ryan-e-premier/dotfiles.git ~/dotfiles
+sudo pacman -S stow
+```
+
 ### 2. Install Applications
 
+**macOS:**
 ```bash
 # Terminal emulators
 brew install --cask ghostty
@@ -47,6 +61,28 @@ brew install tmux
 brew install neovim
 brew install gh
 brew install gh-dash
+```
+
+**Arch Linux:**
+```bash
+# Terminal emulators (ghostty from AUR)
+yay -S ghostty
+sudo pacman -S wezterm
+
+# Shell and prompt
+sudo pacman -S fish starship
+
+# Other tools
+sudo pacman -S tmux neovim github-cli
+yay -S gh-dash
+
+# Clipboard support (Wayland)
+sudo pacman -S wl-clipboard
+```
+
+**Both platforms - Install Oh My Fish:**
+```bash
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
 
 ### 3. Stow Configurations
@@ -66,12 +102,15 @@ stow fish
 
 #### Set Fish as Default Shell
 
+**macOS:**
 ```bash
-# Add fish to allowed shells
 echo $(which fish) | sudo tee -a /etc/shells
-
-# Set fish as default
 chsh -s $(which fish)
+```
+
+**Linux:**
+```bash
+chsh -s /usr/bin/fish
 ```
 
 #### Configure Starship in Fish
@@ -99,17 +138,17 @@ Tmux will use the config at `~/.config/tmux/tmux.conf`. The configuration includ
 - Catppuccin Macchiato color scheme
 - Vi-style key bindings
 - Mouse support
-- Ghostty terminal integration
+- Clipboard integration (wl-copy on Linux/Wayland)
 
-**Key bindings:**
+**Key bindings (prefix is `C-s`):**
 
 | Key | Action |
 |-----|--------|
-| `prefix + \|` | Split horizontally |
-| `prefix + -` | Split vertically |
-| `prefix + h/j/k/l` | Navigate panes |
-| `prefix + H/J/K/L` | Resize panes |
-| `prefix + r` | Reload config |
+| `C-s C-s` | Split horizontally |
+| `C-s C-v` | Split vertically |
+| `C-s h/j/k/l` | Navigate panes |
+| `C-s H/J/K/L` | Resize panes |
+| `C-s r` | Reload config |
 
 **Optional: Install TPM (Tmux Plugin Manager)**
 
