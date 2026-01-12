@@ -42,6 +42,9 @@ brew install --cask wezterm
 brew install fish
 brew install starship
 
+# Install Oh My Fish (fish plugin manager)
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
 # Other tools
 brew install tmux
 brew install neovim
